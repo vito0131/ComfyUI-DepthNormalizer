@@ -1,3 +1,3 @@
-from .depth_range_manual import DepthRangeTo190Manual
+from .depth_range_manual import DepthRangeTo230Manual
 
-__all__ = ["DepthRangeTo190Manual"]
+__all__ = ["DepthRangeTo230Manual"]
