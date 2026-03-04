@@ -1,14 +1,14 @@
 # ComfyUI-DepthNormalizer
 
-A ComfyUI custom node for normalizing depth maps to a specific range (0–190 by default).
+A ComfyUI custom node for normalizing depth maps to a specific range (0–230 by default).
 
 ## 简介
 
-ComfyUI-DepthNormalizer 提供了一个自定义节点，用于将深度图按 0–255 灰阶域进行归一化和拉伸，使输出稳定在 0–190（可配置）。
+ComfyUI-DepthNormalizer 提供了一个自定义节点，用于将深度图按 0–255 灰阶域进行归一化和拉伸，使输出稳定在 0–230（可配置）。
 
 **核心功能：**
 - 在 8-bit 域（0-255）中手动设置最小/最大值进行重映射
-- 支持将输出最大值映射到目标值（默认 190）
+- 支持将输出最大值映射到目标值（默认 230）
 - 可选减去最小值，强制黑色为 0
 - 自动处理 ComfyUI IMAGE 格式（0-1 float）与 8-bit 域的转换
 
@@ -45,8 +45,8 @@ git clone https://github.com/vito0131/ComfyUI-DepthNormalizer.git
 |--------|------|--------|------|------|
 | `image` | IMAGE | - | - | 输入深度图（ComfyUI IMAGE 格式，0-1 float） |
 | `min_8bit` | INT | 0 | 0-255 | 输入深度图在 8-bit 域的最小值 |
-| `max_8bit` | INT | 190 | 0-255 | 输入深度图在 8-bit 域的最大值 |
-| `target_max_8bit` | INT | 190 | 1-255 | 输出深度图在 8-bit 域的目标最大值 |
+| `max_8bit` | INT | 255 | 0-255 | 输入深度图在 8-bit 域的最大值 |
+| `target_max_8bit` | INT | 230 | 1-255 | 输出深度图在 8-bit 域的目标最大值 |
 | `subtract_min` | BOOLEAN | True | - | 是否先减去最小值，使黑色强制为 0 |
 | `clamp_to_target` | BOOLEAN | True | - | 是否将输出限制在目标范围内 |
 
@@ -69,21 +69,21 @@ git clone https://github.com/vito0131/ComfyUI-DepthNormalizer.git
 
 ## 使用示例
 
-### 示例：将深度范围 1-117 拉伸到 0-190
+### 示例：将深度范围 1-117 拉伸到 0-230
 
-假设你有一个深度图，其有效深度值在 8-bit 域的范围是 1 到 117，你希望将其拉伸到 0-190 范围：
+假设你有一个深度图，其有效深度值在 8-bit 域的范围是 1 到 117，你希望将其拉伸到 0-230 范围：
 
 | 参数 | 值 |
 |------|-----|
 | `min_8bit` | 1 |
 | `max_8bit` | 117 |
-| `target_max_8bit` | 190 |
+| `target_max_8bit` | 230 |
 | `subtract_min` | ✅ True |
 | `clamp_to_target` | ✅ True |
 
 **效果：**
 - 输入值 1 将映射到 0
-- 输入值 117 将映射到 190
+- 输入值 117 将映射到 230
 - 中间值线性插值
 
 ## 分类
