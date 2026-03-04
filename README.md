@@ -28,7 +28,7 @@ ComfyUI-DepthNormalizer 提供了一个自定义节点，用于将深度图按 0
 cd /path/to/ComfyUI/custom_nodes
 
 # 克隆仓库
-git clone https://github.com/your-username/ComfyUI-DepthNormalizer.git
+git clone https://github.com/vito0131/ComfyUI-DepthNormalizer.git
 
 # 重启 ComfyUI
 ```
