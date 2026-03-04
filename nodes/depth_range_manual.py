@@ -1,14 +1,14 @@
 import json
 import torch
 
-class DepthRangeTo190Manual:
+class DepthRangeTo230Manual:
     """
     Manual min/max remap in 8-bit domain (0..255) for depth maps.
 
     New:
     - Optional stats_json (from Olm Histogram) to auto-fill luminance min/max.
 
-    Output will be scaled so that max maps to target_max_8bit (default 190).
+    Output will be scaled so that max maps to target_max_8bit (default 230).
     Optionally subtract min first to force black = 0.
     """
 
