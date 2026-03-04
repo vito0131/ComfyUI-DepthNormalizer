@@ -19,7 +19,7 @@ class DepthRangeTo190Manual:
                 "image": ("IMAGE",),
                 "min_8bit": ("INT", {"default": 0, "min": 0, "max": 255, "step": 1}),
                 "max_8bit": ("INT", {"default": 255, "min": 0, "max": 255, "step": 1}),
-                "target_max_8bit": ("INT", {"default": 190, "min": 1, "max": 255, "step": 1}),
+                "target_max_8bit": ("INT", {"default": 230, "min": 1, "max": 255, "step": 1}),
                 "subtract_min": ("BOOLEAN", {"default": True}),
                 "clamp_to_target": ("BOOLEAN", {"default": True}),
             },
